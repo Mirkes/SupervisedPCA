@@ -13,7 +13,7 @@ matrix.
 
 Description of function
 </br>SupervisedPCA calculates supervised PCA with respect to [1].
-</br>   [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return n-by-nComp
+</br>&nbsp;&nbsp;&nbsp;&nbsp;   [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return n-by-nComp
 </br>               matrix V with PCs as columns and diagonal nComp-by-nComp
 </br>               matrix D with fraction of explained modified variance for
 </br>               each component.
