@@ -13,36 +13,36 @@ matrix.
 
 Description of function
 </br>SupervisedPCA calculates supervised PCA with respect to [1].
-%   [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return n-by-nComp
-%               matrix V with PCs as columns and diagonal nComp-by-nComp
-%               matrix D with fraction of explained modified variance for
-%               each component.
-%   data is n-by-m matrix of data (covariance matrix is unacceptable). Data
-%       MUST be centred before.
-%   labels is vector with n elements. The same labels corresponds to points
-%       of the same class.
-%   nComp is number of required component.
-%   kind is kind of calculated PCA. Acceptable values:
-%       'norm' is normalized PCA. Elements of Laplacian matrix are:
-%               L(i,j) = -1/distance(data(:,i)-data(:,j)) for i~=j
-%               L(i,i) = -sum(L(:,i))+L(i,i);
-%       'super' is supervised PCA. Elements of Laplacian matrix are:
-%               L(i,j) = 0 if labels(i)==labels(j),i~=j;
-%               L(i,j) = -1 if labels(i)~=labels(j),i~=j;
-%               L(i,i) = -sum(L(:,i))+L(i,i);
-%       'supernorm' is supervised normalized PCA. Elements of Laplacian
-%           matrix are: 
-%               L(i,j) = 0 if labels(i)==labels(j),i~=j;
-%               L(i,j) = -1/distance(data(:,i)-data(:,j)) 
-%                   if labels(i)~=labels(j),i~=j;
-%               L(i,i) = -sum(L(:,i))+L(i,i);
-%       'usual' corresponds to usual PCA. Elements of Laplacian matrix are:
-%               L(i,j) = -1 if i~=j;
-%               L(i,i) = -sum(L(:,i))+L(i,i);
-%       matrix. In this case kinds must be numerical n-by-n Laplacian
-%               matrix. 
-%
-%Reference
-%1. Koren, Yehuda, and Liran Carmel. "Robust linear dimensionality
-%   reduction." Visualization and Computer Graphics, IEEE Transactions on
-%   10.4 (2004): 459-470.
+</br>   [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return n-by-nComp
+</br>               matrix V with PCs as columns and diagonal nComp-by-nComp
+</br>               matrix D with fraction of explained modified variance for
+</br>               each component.
+</br>   data is n-by-m matrix of data (covariance matrix is unacceptable). Data
+</br>       MUST be centred before.
+</br>   labels is vector with n elements. The same labels corresponds to points
+</br>       of the same class.
+</br>   nComp is number of required component.
+</br>   kind is kind of calculated PCA. Acceptable values:
+</br>       'norm' is normalized PCA. Elements of Laplacian matrix are:
+</br>               L(i,j) = -1/distance(data(:,i)-data(:,j)) for i~=j
+</br>               L(i,i) = -sum(L(:,i))+L(i,i);
+</br>       'super' is supervised PCA. Elements of Laplacian matrix are:
+</br>               L(i,j) = 0 if labels(i)==labels(j),i~=j;
+</br>               L(i,j) = -1 if labels(i)~=labels(j),i~=j;
+</br>               L(i,i) = -sum(L(:,i))+L(i,i);
+</br>       'supernorm' is supervised normalized PCA. Elements of Laplacian
+</br>           matrix are: 
+</br>               L(i,j) = 0 if labels(i)==labels(j),i~=j;
+</br>               L(i,j) = -1/distance(data(:,i)-data(:,j)) 
+</br>                   if labels(i)~=labels(j),i~=j;
+</br>               L(i,i) = -sum(L(:,i))+L(i,i);
+</br>       'usual' corresponds to usual PCA. Elements of Laplacian matrix are:
+</br>               L(i,j) = -1 if i~=j;
+</br>               L(i,i) = -sum(L(:,i))+L(i,i);
+</br>       matrix. In this case kinds must be numerical n-by-n Laplacian
+</br>               matrix. 
+</br>
+</br>Reference
+</br>1. Koren, Yehuda, and Liran Carmel. "Robust linear dimensionality
+</br>   reduction." Visualization and Computer Graphics, IEEE Transactions on
+</br>   10.4 (2004): 459-470.
