@@ -14,11 +14,11 @@ matrix.
 Description of function
 </br>SupervisedPCA calculates supervised PCA with respect to [1].
 </br>&nbsp;&nbsp;&nbsp;&nbsp;   [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return n-by-nComp
-</br>               matrix V with PCs as columns and diagonal nComp-by-nComp
-</br>               matrix D with fraction of explained modified variance for
-</br>               each component.
-</br>   data is n-by-m matrix of data (covariance matrix is unacceptable). Data
-</br>       MUST be centred before.
+</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matrix V with PCs as columns and diagonal nComp-by-nComp
+</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matrix D with fraction of explained modified variance for
+</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;each component.
+</br>&nbsp;&nbsp;&nbsp;&nbsp;data is n-by-m matrix of data (covariance matrix is unacceptable). Data
+</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MUST be centred before.
 </br>   labels is vector with n elements. The same labels corresponds to points
 </br>       of the same class.
 </br>   nComp is number of required component.
