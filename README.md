@@ -39,6 +39,13 @@ Description of function
         'usual' corresponds to usual PCA. Elements of Laplacian matrix are:
                 L(i,j) = -1 if i~=j;
                 L(i,i) = -sum(L(:,i))+L(i,i);
+       number. Specified number corresponds to parameter alpha of advanced
+           supervised PCA. Elements of Laplacian matrix are:
+               L(i,j) = 1/Number of pairs with points in different
+                   classes if labels(i)~=labels(j),i~=j;
+               L(i,j) = alpha/Nu(Nu-1) where Nu is number of points in class
+                   label(i) if labels(i)==labels(j),i~=j;
+               L(i,i) = -sum(L(:,i))+L(i,i);
         matrix. In this case kinds must be numerical n-by-n Laplacian
                 matrix. 
  
