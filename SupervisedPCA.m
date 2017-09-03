@@ -29,7 +29,7 @@ function [ V, D ] = SupervisedPCA( data, labels, nComp, kind )
 %               L(i,i) = -sum(L(:,i))+L(i,i);
 %       number. Specified number corresponds to parameter alpha of advanced
 %           supervised PCA. Elements of Laplacian matrix are:
-%               L(i,j) = 1/Number of pairs with points in different
+%               L(i,j) = -1/Number of pairs with points in different
 %                   classes if labels(i)~=labels(j),i~=j;
 %               L(i,j) = alpha/Nu(Nu-1) where Nu is number of points in class
 %                   label(i) if labels(i)==labels(j),i~=j;
@@ -44,6 +44,8 @@ function [ V, D ] = SupervisedPCA( data, labels, nComp, kind )
 
     %Get sizes of data
     [n, m] = size(data);
+    data = double(data);
+    labels = double(labels);
     
     %Calculate Laplacian matrix
     if ischar(kind)
@@ -77,10 +79,11 @@ function [ V, D ] = SupervisedPCA( data, labels, nComp, kind )
     end
     
     %Calculate transformed covariance matrix
-    L = data'*L*data;
+    L = data' * L * data;
     %Sum of variances
     S = abs(sum(diag(L)));
     %Request calculations from eigs
+    
     if nComp<m-1
         [ V, D ] = eigs(L, nComp);
     else
@@ -97,7 +100,7 @@ end
 function L = prepareNorm(data)
     %Calculate distances between points
     x = sum(data.^2,2);
-    L = sqrt(bsxfun(@plus,x,x')-2*(data*data'));
+    L = sqrt(2*(bsxfun(@plus,x,x')-(data*data')));
 end
 
 function L = prepareAdvanced(labels, alpha)
@@ -112,6 +115,9 @@ function L = prepareAdvanced(labels, alpha)
         ind1 = labels==lab(k);
         ind = find(ind1);
         N = sum(ind1);
-        L(ind,ind) = alpha*2/(K*N*(N-1));
+        %Change nothing for class with one element
+        if N>1
+            L(ind,ind) = alpha*2/(K*N*(N-1));
+        end
     end
 end
