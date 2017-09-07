@@ -11,7 +11,7 @@ simulateneously. Proposed MatLab function SupervisedPCA implements all these mod
 can be calculated by this function as well. Also function allow to apply user defined Laplacian
 matrix.
 
-One more significantly more powerful method of Advinced supervised PCA is implemented as well.
+One more significantly more powerful method of Advinced supervised PCA is implemented as well. Meaning and usage of parameter alpha of this algorithm is described in [wiki](https://github.com/Mirkes/SupervisedPCA/wiki)
 
 Read [wiki](https://github.com/Mirkes/SupervisedPCA/wiki) of this repository for much more detailed information on the algorithm.
 
@@ -55,4 +55,14 @@ Description of function
                 matrix. 
  
  Reference
+ References
+ 1. Gorban, Alexander N., Zinovyev, Andrei Y. “Principal Graphs and Manifolds”, 
+    Chapter 2 in: Handbook of Research on Machine Learning Applications and Trends: 
+    Algorithms, Methods, and Techniques, Emilio Soria Olivas et al. (eds), 
+    IGI Global, Hershey, PA, USA, 2009, pp. 28-59.
+ 2. Zinovyev, Andrei Y. "Visualisation of multidimensional data" Krasnoyarsk: KGTU,
+    p. 180 (2000) (In Russian).
+ 3. Koren, Yehuda, and Liran Carmel. "Robust linear dimensionality
+    reduction." Visualization and Computer Graphics, IEEE Transactions on
+    10.4 (2004): 459-470.
 </pre>
