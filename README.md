@@ -10,6 +10,11 @@ Moreover they sugests three versions of PCA: normalized, supervised and normaliz
 simulateneously. Proposed MatLab function SupervisedPCA implements all these models. Standard PCA 
 can be calculated by this function as well. Also function allow to apply user defined Laplacian
 matrix.
+
+One more significantly more powerful method of Advinced supervised PCA is implemented as well.
+
+Read [wiki](https://github.com/Mirkes/SupervisedPCA/wiki) of this repository for much more detailed information on the algorithm.
+
 <pre>
 Description of function
  SupervisedPCA calculates supervised PCA with respect to [1].
@@ -50,7 +55,4 @@ Description of function
                 matrix. 
  
  Reference
- 1. Koren, Yehuda, and Liran Carmel. "Robust linear dimensionality
-    reduction." Visualization and Computer Graphics, IEEE Transactions on
-    10.4 (2004): 459-470.
 </pre>
