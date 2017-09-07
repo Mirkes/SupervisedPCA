@@ -54,7 +54,6 @@ Description of function
         matrix. In this case kinds must be numerical n-by-n Laplacian
                 matrix. 
  
- Reference
  References
  1. Gorban, Alexander N., Zinovyev, Andrei Y. “Principal Graphs and Manifolds”, 
     Chapter 2 in: Handbook of Research on Machine Learning Applications and Trends: 
