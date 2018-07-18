@@ -1,5 +1,5 @@
 # SupervisedPCA
-Classification supervised PCA in accordance with Yehuda Koren and Liran Carmel
+Classification supervised PCA inspired by Yehuda Koren and Liran Carmel. 
 
 Yehuda Koren and Liran Carmel introduced supervised PCA for classification problem in their paper
 
@@ -55,7 +55,7 @@ Description of function
                 matrix. 
  
  References
- 1. Gorban, Alexander N., Zinovyev, Andrei Y. ìPrincipal Graphs and Manifoldsî, 
+ 1. Gorban, Alexander N., Zinovyev, Andrei Y. ‚ÄúPrincipal Graphs and Manifolds‚Äù, 
     Chapter 2 in: Handbook of Research on Machine Learning Applications and Trends: 
     Algorithms, Methods, and Techniques, Emilio Soria Olivas et al. (eds), 
     IGI Global, Hershey, PA, USA, 2009, pp. 28-59.
