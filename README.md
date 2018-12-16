@@ -65,3 +65,7 @@ Description of function
     reduction." Visualization and Computer Graphics, IEEE Transactions on
     10.4 (2004): 459-470.
 </pre>
+
+## Acknowledgements
+
+Supported by the University of Leicester (UK), the Ministry of Education and Science of the Russian Federation, project â„– 14.Y26.31.0022
