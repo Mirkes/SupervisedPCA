@@ -1,6 +1,6 @@
 function [ V, D ] = SupervisedPCA( data, labels, nComp, kind )
 %SupervisedPCA calculates supervised PCA with respect to [1].
-%   [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return n-by-nComp
+%   [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return m-by-nComp
 %               matrix V with PCs as columns and diagonal nComp-by-nComp
 %               matrix D with fraction of explained modified variance for
 %               each component (it is not true for advanced supervised PCA
