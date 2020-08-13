@@ -1,5 +1,5 @@
 # SupervisedPCA
-Classification supervised PCA inspired by Yehuda Koren and Liran Carmel. 
+Classification supervised PCA inspired by Yehuda Koren and Liran Carmel and essentially developed by E.M. Mirkes, A.N. Gorban and A. Yu. Zinoviev. 
 
 Yehuda Koren and Liran Carmel introduced supervised PCA for classification problem in their paper
 
@@ -18,7 +18,7 @@ Read [wiki](https://github.com/Mirkes/SupervisedPCA/wiki) of this repository for
 <pre>
 Description of function
  SupervisedPCA calculates supervised PCA with respect to [1].
-    [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return n-by-nComp
+    [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return m-by-nComp
                 matrix V with PCs as columns and diagonal nComp-by-nComp
                 matrix D with fraction of explained modified variance for
                 each component.
