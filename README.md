@@ -1,5 +1,5 @@
 # SupervisedPCA
-Classification supervised PCA inspired by Yehuda Koren and Liran Carmel and essentially developed by E.M. Mirkes, A.N. Gorban and A. Yu. Zinoviev. 
+Classification supervised PCA inspired by Yehuda Koren and Liran Carmel and essentially developed by E.M. Mirkes, S.V. Stasenko, A.N. Gorban and A. Yu. Zinoviev. 
 
 Yehuda Koren and Liran Carmel introduced supervised PCA for classification problem in their paper
 
