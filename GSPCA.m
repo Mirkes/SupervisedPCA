@@ -21,13 +21,13 @@ function [ V, D ] = GSPCA( data, labels, nComp, param )
 %           corresponding element of vector param.
 %       numeric matrix L-by-L is matrix of repulsion coefficients. The
 %           elements upper than main diagonal are coefficients of repulsion
-%           between corresponding clusses. The diagonal elements are
+%           between corresponding classes. The diagonal elements are
 %           attraction coefficients for corresponding classes.
 %
 %References
 %1. Mirkes, Evgeny M., Gorban, Alexander N., Zinovyev, Andrei Y.,
 %   Supervised PCA, Available online in https://github.com/Mirkes/SupervisedPCA/wiki
-%2. Gorban, Alexander N., Zinovyev, Andrei Y. ìPrincipal Graphs and Manifoldsî, 
+%2. Gorban, Alexander N., Zinovyev, Andrei Y. ‚ÄúPrincipal Graphs and Manifolds‚Äù, 
 %   Chapter 2 in: Handbook of Research on Machine Learning Applications and Trends: 
 %   Algorithms, Methods, and Techniques, Emilio Soria Olivas et al. (eds), 
 %   IGI Global, Hershey, PA, USA, 2009, pp. 28-59.
@@ -62,7 +62,7 @@ function [ V, D ] = GSPCA( data, labels, nComp, param )
                 ' classes (unique values in labels)']);
         end
         coef = ones(L);
-        coef = coef + diag(diag(param - 1));
+        coef = coef + diag(param - 1);
     elseif ismatrix(param)
         [a, b] = size(param);
         if a ~= L || b ~= L
@@ -110,7 +110,7 @@ function [ V, D ] = GSPCA( data, labels, nComp, param )
     end
 
     %Request calculations from eigs
-    if nComp<m-1
+    if nComp < m
         [ V, D ] = eigs(M, nComp);
     else
         [ V, D ] = eig(M);
