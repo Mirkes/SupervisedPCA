@@ -15,6 +15,11 @@ One more significantly more powerful method of Advinced supervised PCA is implem
 
 Read [wiki](https://github.com/Mirkes/SupervisedPCA/wiki) of this repository for much more detailed information on the algorithm.
 
+Please refer as
+
+Mirkes, E.M., Gorban, A.N., Zinoviev, A. Supervised PCA. 2016. Available online: https://github.com/Mirkes/SupervisedPCA
+(accessed on ??.??.????).
+
 <pre>
 Description of function
  SupervisedPCA calculates supervised PCA with respect to [1].
