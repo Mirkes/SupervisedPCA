@@ -2,7 +2,7 @@ function [V, D] = ClassSPCA( data, labels, nComp, reduced_W )
 %   Return n-by-nComp matrix V with PCs as columns and diagonal
 %   nComp-by-nComp matrix D with eigenvalues corresponding to PCs.
 %
-%   data is a n-by-m matrix of centralized data.
+%   data is a n-by-m matrix of data.
 %   labels is a n-ny-1 matrix that shows the labels of data. The same
 %       labels corresponds to points of the same class. Number of unique
 %       values in labels is L.
