@@ -25,8 +25,7 @@ Description of function
  SupervisedPCA calculates supervised PCA with respect to [1].
     [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return m-by-nComp
                 matrix V with PCs as columns and diagonal nComp-by-nComp
-                matrix D with fraction of explained modified variance for
-                each component.
+                eigenvalues for each component.
     data is n-by-m matrix of data (covariance matrix is unacceptable). Data
         MUST be centred before.
     labels is vector with n elements. The same labels corresponds to points
