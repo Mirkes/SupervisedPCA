@@ -2,9 +2,7 @@ function [ V, D ] = SupervisedPCA( data, labels, nComp, kind )
 %SupervisedPCA calculates supervised PCA with respect to [1].
 %   [ V, D ] = SupervisedPCA( data, labels, nComp, kind ) return m-by-nComp
 %               matrix V with PCs as columns and diagonal nComp-by-nComp
-%               matrix D with fraction of explained modified variance for
-%               each component (it is not true for advanced supervised PCA
-%               where kind is scalar). 
+%               matrix D with eigenvalues for each component. 
 %   data is n-by-m matrix of data (covariance matrix is unacceptable). Data
 %       MUST be centred before.
 %   labels is numeric vector with n elements. The same labels corresponds
@@ -49,7 +47,7 @@ function [ V, D ] = SupervisedPCA( data, labels, nComp, kind )
 %   10.4 (2004): 459-470.
 
     %Get sizes of data
-    [n, m] = size(data);
+    n = size(data, 1);
     data = double(data);
     labels = double(labels);
     
@@ -86,16 +84,13 @@ function [ V, D ] = SupervisedPCA( data, labels, nComp, kind )
     
     %Calculate transformed covariance matrix
     L = data' * L * data;
-    %Sum of variances
-    S = abs(sum(diag(L)));
-    %Request calculations from eigs
-    
-    if nComp<m-1
-        [ V, D ] = eigs(L, nComp);
-    else
-        [ V, D ] = eig(L);
-    end
-    D = D./S;
+    %Request calculations from eig
+    [V, D] = eig(L);
+    D = diag(D);
+    [D, ind] = sort(D, 'descend');
+    D = diag(D(1:nComp));
+    V = V(:, ind);
+    V = V(:, 1:nComp);
 end
 
 function L = prepareSuper(labels)

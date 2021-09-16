@@ -1,6 +1,6 @@
-function [ V, D ] = GSPCA( data, labels, nComp, param )
+function [V, D] = GSPCA( data, labels, nComp, param )
 %GSPCA calculates generalised advanced supervised PCA with respect to [1].
-%   [ V, D ] = GSPCA( data, labels, nComp, kind ) return n-by-nComp
+%   [V, D] = GSPCA( data, labels, nComp, kind ) return n-by-nComp
 %               matrix V with PCs as columns and diagonal nComp-by-nComp
 %               matrix D with eigenvalues corresponding to PCs. 
 %   data is n-by-m matrix of data (covariance matrix is unacceptable). Data
@@ -27,7 +27,7 @@ function [ V, D ] = GSPCA( data, labels, nComp, param )
 %References
 %1. Mirkes, Evgeny M., Gorban, Alexander N., Zinovyev, Andrei Y.,
 %   Supervised PCA, Available online in https://github.com/Mirkes/SupervisedPCA/wiki
-%2. Gorban, Alexander N., Zinovyev, Andrei Y. ‚ÄúPrincipal Graphs and Manifolds‚Äù, 
+%2. Gorban, Alexander N., Zinovyev, Andrei Y. ìPrincipal Graphs and Manifoldsî, 
 %   Chapter 2 in: Handbook of Research on Machine Learning Applications and Trends: 
 %   Algorithms, Methods, and Techniques, Emilio Soria Olivas et al. (eds), 
 %   IGI Global, Hershey, PA, USA, 2009, pp. 28-59.
@@ -38,7 +38,7 @@ function [ V, D ] = GSPCA( data, labels, nComp, param )
 %   10.4 (2004): 459-470.
 
     %Get sizes of data
-    [n, m] = size(data);
+    m = size(data, 2);
     data = double(data);
     labels = double(labels);
     % List of classes
@@ -79,7 +79,7 @@ function [ V, D ] = GSPCA( data, labels, nComp, param )
     % Symmetrize coef matrix
     coef = coef - tril(coef, -1) + triu(coef, 1)';
     
-    % Calculate diagonal terms of Laplacian matrix without devision by
+    % Calculate diagonal terms of Laplacian matrix without division by
     % number of elements in class
     diagV = diag(coef)';
     diagC = sum(coef) - diagV;
@@ -109,10 +109,11 @@ function [ V, D ] = GSPCA( data, labels, nComp, param )
         end
     end
 
-    %Request calculations from eigs
-    if nComp < m
-        [ V, D ] = eigs(M, nComp);
-    else
-        [ V, D ] = eig(M);
-    end
+    %Request calculations from eig
+    [V, D] = eig(M);
+    D = diag(D);
+    [D, ind] = sort(D, 'descend');
+    D = diag(D(1:nComp));
+    V = V(:, ind);
+    V = V(:, 1:nComp);
 end
