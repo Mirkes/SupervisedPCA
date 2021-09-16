@@ -1,6 +1,7 @@
 This folder contains Universal SPCA functions developed by Shibo Lei for master thesis under supervison of Dr. Evgeny Mirkes.
 Please refer as:
 
+Lei, Shibo and Mirkes, Evgeny. Universal supervised PCA for regression and classification. Available online at https://github.com/Mirkes/SupervisedPCA/tree/master/Universal%20SPCA%20from%20Shibo%20Lei
 
 Presented functions:
 
